@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "282902041213",
+    "project_id": "smartmirror-4bf14",
+    "storage_bucket": "smartmirror-4bf14.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:282902041213:android:d009dbfb7f89372b905714",
+        "android_client_info": {
+          "package_name": "com.example.smartmirro_rtsp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "282902041213-nninerbsrr8hbo27t26sevbrn9ijs31u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnWX50lTaXY6oAEeYgwbNwhfFhYQVC4A0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "282902041213-nninerbsrr8hbo27t26sevbrn9ijs31u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:282902041213:android:1a6707121e976289905714",
+        "android_client_info": {
+          "package_name": "com.example.smartmirror"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "282902041213-nninerbsrr8hbo27t26sevbrn9ijs31u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnWX50lTaXY6oAEeYgwbNwhfFhYQVC4A0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "282902041213-nninerbsrr8hbo27t26sevbrn9ijs31u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

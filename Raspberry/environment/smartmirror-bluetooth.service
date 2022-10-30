@@ -1,0 +1,17 @@
+[Unit]
+Description=Smart Mirror Bluetooth Service
+After=bluetooth.service
+After=graphical.target
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/smartmirror
+ExecStart=/bin/sh environment/bt_autostart.sh
+ExecStartPost=sudo /usr/bin/python3 managers/BluetoothManager.py
+Restart=always
+
+[Install]
+WantedBy=bluetooth.target
+WantedBy=multi-user.target

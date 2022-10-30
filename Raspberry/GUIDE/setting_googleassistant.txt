@@ -1,0 +1,48 @@
+# 구글어시스턴스
+sudo apt install portaudio19-dev libffi-dev libssl-dev
+pip3 install grpcio==1.44.0 --no-binary=grpcio 
+pip3 install grpcio-tools==1.44.0 --no-binary=grpcio-tools
+pip3 install google-assistant-library
+
+python3 -m pip install --upgrade google-assistant-sdk[samples]
+python3 -m pip install --upgrade google-auth-oauthlib[tool]
+
+# JSON 파일을 이용해 기기 인증하기
+
+https://projecteli.tistory.com/181
+https://console.actions.google.com/u/0/project/smartmirror-1a458/deviceregistration/
+https://github.com/googlesamples/assistant-sdk-python.git
+
+google-oauthlib-tool --scope https://www.googleapis.com/auth/assistant-sdk-prototype --save --headless --client-secrets [[json 경로]client_secret_client-id.json]
+
+
+
+# ALSA(스피커 및 마이크 셋팅)
+nano /home/pi/.asoundrc
+################ 아래의 내용 삽입 #########
+pcm.!default {
+  type asym
+  capture.pcm "mic"
+  playback.pcm "speaker"
+}
+pcm.mic {
+  type plug
+  slave {
+    pcm "hw:1,0"
+  }
+}
+pcm.speaker {
+  type plug
+  slave {
+    pcm "hw:1,0"
+  }
+}
+#########################################
+
+# 잘 되나 테스트
+googlesamples-assistant-pushtotalk -lang ko-KR --project-id [my-dev-project] --device-model-id [my-model]
+googlesamples-assistant-pushtotalk --lang ko-KR --project-id smartmirror-1a458 --device-model-id smartmirror-1a458-rpi4-k5onhw
+
+google-assistant-demo --project-id smartmirror-1a458 --device-model-id smartmirror-1a458-rpi4-k5onhw
+
+

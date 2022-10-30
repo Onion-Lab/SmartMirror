@@ -1,0 +1,18 @@
+# RTPS 
+sudo apt install libjpeg-dev
+sudo modprobe bcm2835-v4l2
+sudo apt install liblivemedia-dev libv4l-dev cmake libasound2-dev
+
+wget http://www.live555.com/liveMedia/public/live555-latest.tar.gz
+tar -xzf live555-latest.tar.gz
+cd live
+./genMakefiles linux
+sudo make CPPFLAGS=-DALLOW_RTSP_SERVER_PORT_REUSE=1 install
+cd ..
+
+git clone https://github.com/mpromonet/h264_v4l2_rtspserver
+cd h264_v4l2_rtspserver
+cmake . && make -j4 
+
+
+# 정상 동작하는지 테스트 : v4l2rtspserver -F 25 -W 1280 -H 720 -P 8555 /dev/video0

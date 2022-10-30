@@ -1,0 +1,24 @@
+# 블루투스
+sudo apt install bluetooth blueman bluez
+sudo apt install python3-bluetooth lib
+
+sudo nano /etc/systemd/system/dbus-org.bluez.service 
+
+############열어서 아래 수정########
+ExecStart=/usr/libexec/bluetooth/bluetoothd -C
+ExecStartPost=/usr/bin/sdptool add SP
+################################
+
+
+# 페어링 가능 시간 무제한으로 변경(기본 180초)
+sudo nano /etc/bluetooth/main.conf
+########### 열어서 아래 수정#########
+DiscoverableTimeout = 0 으로 변경
+##################################
+sudo systemctl daemon-reload;
+sudo systemctl restart bluetooth.service;
+
+
+# 네오픽셀 LED 라이브러리
+pip3 install rpi_ws281x adafruit-circuitpython-neopixel
+sudo python3 -m pip install --force-reinstall adafruit-blinka

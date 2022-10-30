@@ -1,0 +1,19 @@
+[Unit]
+Description=Smart Mirror GUI Service
+#After=bluetooth.service
+After=graphical.target
+After=network-online.target
+Wants=network-online.target
+
+
+[Service]
+#### wayland environment file
+EnvironmentFile=/home/pi/smartmirror/environment/qtenv
+User=pi
+WorkingDirectory=/home/pi/smartmirror
+ExecStart=/usr/bin/python3 main.py
+# Restart=always
+
+[Install]
+WantedBy=bluetooth.target
+WantedBy=multi-user.target

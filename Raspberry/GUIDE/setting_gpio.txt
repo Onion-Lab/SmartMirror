@@ -1,0 +1,6 @@
+# PIR 센서 : GPIO 23번 사용, VCC는 3.3V, GND도 연결하기
+
+# NeoPixel : GPIO 18번 사용, VCC는 5V, GND도 연결하기
+
+# NeoPixel을 위한 pip 패키지. sudo로 설치하고 sudo로 실행해야함
+sudo pip3 install rpi_ws281x adafruit-circuitpython-neopixel

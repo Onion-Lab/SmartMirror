@@ -1,0 +1,12 @@
+[Unit]
+Description=Smart Mirror RTSP Streaming Service
+After=graphical.target
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=pi
+ExecStart=/usr/local/bin/v4l2rtspserver -F 25 -W 1280 -H 720 -P 8555 /dev/video0
+
+[Install]
+WantedBy=multi-user.target

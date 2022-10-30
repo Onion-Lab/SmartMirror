@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:saveEnabled="false"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/text_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Not Connected"
+        android:textSize="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_paired"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:onClick="onClickButtonPaired"
+        android:text="Paired Devices"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_status"
+        tools:ignore="OnClick" />
+
+    <Button
+        android:id="@+id/btn_search"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:onClick="onClickButtonSearch"
+        android:text="Search"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_paired"
+        tools:ignore="OnClick" />
+
+    <SeekBar
+        android:id="@+id/seekBar_red"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:max="255"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_search" />
+
+    <SeekBar
+        android:id="@+id/seekBar_green"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:max="255"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/seekBar_red" />
+
+    <SeekBar
+        android:id="@+id/seekBar_blue"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:max="255"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/seekBar_green" />
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/seekBar_blue" />
+
+    <TextView
+        android:id="@+id/ltextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="R"
+        app:layout_constraintBottom_toBottomOf="@+id/seekBar_red"
+        app:layout_constraintEnd_toStartOf="@+id/seekBar_red"
+        app:layout_constraintTop_toBottomOf="@+id/btn_search" />
+
+    <TextView
+        android:id="@+id/ltextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="G"
+        app:layout_constraintBottom_toBottomOf="@+id/seekBar_green"
+        app:layout_constraintEnd_toStartOf="@+id/seekBar_green"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar_red" />
+
+    <TextView
+        android:id="@+id/ltextView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="B"
+        app:layout_constraintBottom_toBottomOf="@+id/seekBar_blue"
+        app:layout_constraintEnd_toStartOf="@+id/seekBar_blue"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar_green" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
